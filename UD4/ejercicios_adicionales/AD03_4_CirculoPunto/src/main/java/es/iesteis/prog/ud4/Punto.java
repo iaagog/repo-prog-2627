@@ -70,8 +70,13 @@ public class Punto
 	}
 
 	public double getDistanciaDesdeOrigen(){
-		double distancia = Math.sqrt(x*x + y*y);
-		return distancia;
+		double distanciaDesdeOrigen = Math.sqrt(x*x + y*y);
+		return distanciaDesdeOrigen;
+	}
+
+	public double getDistanciaDesde(Punto p){
+		double distanciaDesde = Math.sqrt(Math.pow(x - p.getX(), 2) + Math.pow(y - p.getY(), 2));
+		return distanciaDesde;
 	}
 
 	
