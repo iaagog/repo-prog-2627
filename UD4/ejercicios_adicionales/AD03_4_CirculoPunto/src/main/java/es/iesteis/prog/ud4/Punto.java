@@ -82,10 +82,9 @@ public class Punto
 	
 
 	static void main(String[] args) {
-		Punto punto1 = new Punto(3,4);
-		Punto punto2 = new Punto(5,6);
-		System.out.println(punto1.toString());
-		System.out.println(punto2.toString());
+		TestPunto test = new TestPunto();
+
+		test.test1();
 	}
 
 }
