@@ -70,7 +70,10 @@ public class Punto
 	}
 
 	static void main(String[] args) {
-		//Podéis hacer las pruebas de esta clase aquí, creando una instancia de Punto.
+		Punto punto1 = new Punto(3,4);
+		Punto punto2 = new Punto(5,6);
+		System.out.println(punto1.toString());
+		System.out.println(punto2.toString());
 	}
 
 }

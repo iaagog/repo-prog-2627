@@ -11,17 +11,41 @@ public class Circulo
 {
     private final double PI = 3.14;
     private double radio;
+    private Punto centro;
 
      /**
      * constructor para los objetos de la clase Circulo
      * 
      */
-    public Circulo()
-    {
-       
+    public Circulo(double radio, Punto valorCentro){
+        this.radio = radio;
+        centro = valorCentro;
     }
-    
-   
+
+    public Circulo(double radio){
+        this.radio = radio;
+        centro = new Punto(0,0);
+    }
+
+    public Punto getCentro(){
+        return centro;
+    }
+
+    public void setCentroX(int valorX){
+        centro.setX(valorX);
+    }
+
+    public void setCentroY(int valorY){
+        centro.setY(valorY);
+    }
+
+    public String toString(){
+        return "El valor del centro es: " + centro.toString()  + " y el valor del radio es: " + getRadio();
+    }
+
+    public void printCirculo(){
+        System.out.println(toString());
+    }
     /**
      * 
      * @return devuelve el radio del círculo
