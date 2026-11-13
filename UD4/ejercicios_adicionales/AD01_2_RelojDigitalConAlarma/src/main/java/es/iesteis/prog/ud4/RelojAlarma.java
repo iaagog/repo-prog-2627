@@ -27,8 +27,8 @@ public class RelojAlarma {
         return reloj.getHora();
     }
 
-    public void setAlarma(int hora, int minutos){
-        alarma.setHoraAlarma(hora, minutos);
+    public void setAlarma(int horaAlarma, int minutosAlarma){
+        alarma.setHoraAlarma(horaAlarma, minutosAlarma);
     }
 
     private boolean esHoraAlarma(){
