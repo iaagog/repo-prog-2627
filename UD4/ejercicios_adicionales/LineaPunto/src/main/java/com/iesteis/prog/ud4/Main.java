@@ -23,7 +23,6 @@ public class Main {
         linea2.moverDerecha(20);
         linea1.printLinea();
         linea2.printLinea();
-
-        
     }
+
 }
