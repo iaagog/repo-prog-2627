@@ -14,9 +14,9 @@ public class DemoFraccion
     /**
      * Constructor de la clase DemoFraccion
      */
-    public DemoFraccion()
-    {
-         
+    public DemoFraccion(){
+        fraccion1 = new Fraccion(-4,7);
+        fraccion2 = new Fraccion(13,2);
     }
 
     /**
@@ -24,18 +24,20 @@ public class DemoFraccion
      *
      */
     
-    public void demo1()
-    {
-       
+    public void demo1(){
+       escribirFraccion("La suma es: ", fraccion1.sumar(fraccion2));
+       escribirFraccion("La resta es: ", fraccion1.restar(fraccion2));
+       escribirFraccion("La multiplicacion es: ", fraccion1.multiplicar(fraccion2));
+       escribirFraccion("La division es: ", fraccion1.dividir(fraccion2));
     }
     
     /**
      *
      *   
      */
-    private void escribirFraccion(String mensaje, Fraccion laFraccion)
-    {
-        
+    private void escribirFraccion(String mensaje, Fraccion laFraccion){
+        System.out.println(mensaje);
+        System.out.println(laFraccion);
     }
     
     /**
