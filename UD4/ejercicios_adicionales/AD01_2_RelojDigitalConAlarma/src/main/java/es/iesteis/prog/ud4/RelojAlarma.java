@@ -1,0 +1,46 @@
+package es.iesteis.prog.ud4;
+
+public class RelojAlarma {
+    private VisorReloj reloj;
+    private Alarma alarma;
+
+
+    public RelojAlarma(){
+        reloj = new VisorReloj();
+        alarma = new Alarma();
+    }
+
+    public RelojAlarma(int hora, int minutos){
+        reloj = new VisorReloj(hora, minutos);
+        alarma = new Alarma();
+    }
+
+    public void emitirTic(){
+        reloj.emitirTic();
+
+        if(esHoraAlarma()){
+            System.out.println("RRRRIIIIINNNNNGGGGG");
+        }
+    }
+
+    public String getHora(){
+        return reloj.getHora();
+    }
+
+    public void setAlarma(int horaAlarma, int minutosAlarma){
+        alarma.setHoraAlarma(horaAlarma, minutosAlarma);
+    }
+
+    private boolean esHoraAlarma(){
+        return reloj.getHora().equals(alarma.getHoraAlarma());
+    }
+
+    public String getAlarma(){
+        return alarma.getHoraAlarma();
+    }
+
+    public void ponerEnHora(int hora, int minutos){
+        reloj.ponerEnHora(hora, minutos);
+    }
+
+}
