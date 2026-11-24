@@ -1,3 +1,4 @@
+import java.sql.SQLOutput;
 import java.util.Scanner;
 import java.util.Random;
 
@@ -33,8 +34,12 @@ public class DemoWhileUno
      *  
      * 
      */
-    public void ejemplo01()
-    {
+    public void ejemplo01(){
+        int contadorSaludos = 0;
+        while(contadorSaludos < 10){
+            contadorSaludos++;
+            System.out.println("Hola " + contadorSaludos);
+        }
 
     }
 
@@ -45,7 +50,13 @@ public class DemoWhileUno
      */
     public void ejemplo02()
     {
-
+        Moneda monedaPrueba = new Moneda();
+        int contador = 0;
+        while(contador < 10){
+            contador++;
+            monedaPrueba.tirar();
+            System.out.println(monedaPrueba.esCara());
+        }
     }
 
     /**
@@ -54,8 +65,23 @@ public class DemoWhileUno
      * contando las veces que ha salido cara y las que ha salido cruz
      * Uso de contadores
      */
-    public void ejemplo03()
-    {
+    public void ejemplo03(){
+        Moneda moneda2 = new Moneda();
+        int i = 0;
+        int contadorCara = 0;
+        int contadorCruz = 0;
+
+        while (i < 30){
+            moneda2.tirar();
+            if(moneda2.esCara()){
+                contadorCara++;
+            }else{
+                contadorCruz++;
+            }
+            i++;
+        }
+        System.out.println("Salieron " + contadorCara + " caras");
+        System.out.println("Salieron " + contadorCruz + " cruces");
 
     }
 
@@ -64,8 +90,15 @@ public class DemoWhileUno
      * Suma y producto de los números naturales desde el 20 hasta el 1
      * Uso de acumuladores
      */
-    public void ejemplo04()
-    {
+    public void ejemplo04(){
+        int suma = 0;
+        int i = 0;
+
+        while(i < 20){
+            i++;
+            suma += i;
+        }
+        System.out.println("La suma es: " + suma);
 
     }
 
@@ -76,9 +109,22 @@ public class DemoWhileUno
      *  
      *  Bucle controlado por un valor centinela
      */
-    public void ejemplo05( )
-    {
+    public void ejemplo05(){
+        boolean es25 = false;
+        int contador = 0;
 
+        while(!es25){
+            contador++;
+            int numeroAleatorio = (int) (Math.random() * (50 - 10 + 1)) + 10;
+            System.out.print( " " + numeroAleatorio);
+            if(contador % 6 == 0){
+                System.out.print("\n");
+            }
+            if(numeroAleatorio == 25){
+                System.out.println(" Fin del bucle, el numero ya es " + numeroAleatorio);
+                es25 = true;
+            }
+        }
     }
 
     /**
@@ -86,9 +132,22 @@ public class DemoWhileUno
      *  Parar cuando salga el 0. Escribir al final la suma
      *  Bucle controlado por un valor centinela
      */
-    public void ejemplo06( )
-    {
+    public void ejemplo06(){
+        int i = 0;
+        boolean es0 = false;
+        int suma = 0;
 
+        while (!es0){
+            int num = (int) (Math.random() * 51);
+            suma += num;
+            if(num == 0){
+                es0 = true;
+                System.out.println("El numero vale: " + num);
+            }
+            System.out.println(num);
+        }
+
+        System.out.println("La suma es: " + suma);
     }
 
     /**
@@ -329,6 +388,9 @@ public class DemoWhileUno
 
     static void main(String[] args) {
         //TODO añadir aqui el codigo de pruebas: crear instancia y llamar a las funciones
+        DemoWhileUno miDemo = new DemoWhileUno();
+
+        miDemo.ejemplo06();
     }
 
 }
