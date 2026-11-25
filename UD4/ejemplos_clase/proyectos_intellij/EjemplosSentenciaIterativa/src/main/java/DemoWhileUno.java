@@ -93,13 +93,15 @@ public class DemoWhileUno
     public void ejemplo04(){
         int suma = 0;
         int i = 0;
+        long producto = 1;
 
         while(i < 20){
             i++;
+            producto *= i;
             suma += i;
         }
         System.out.println("La suma es: " + suma);
-
+        System.out.println("El producto es: " + producto);
     }
 
     /**
@@ -157,9 +159,18 @@ public class DemoWhileUno
      * Usar una variable booleana como conmutador (o switch - flag) para
      * salir del bucle
      */
-    public void ejemplo07()
-    {
+    public void ejemplo07(){
+            int tiradas = 0;
+            boolean salioCara = false;
 
+            while(tiradas <= 30 && ! salioCara){
+                moneda.tirar();
+                if(moneda.esCara()){
+                    salioCara = true;
+                }else{
+                    tiradas++;
+                }
+            }
     }
 
     /**
@@ -167,9 +178,18 @@ public class DemoWhileUno
      *  y producto de impares entre 1 y 100 
      *   
      */
-    public  void ejemplo08()
-    {
+    public  void ejemplo08(){
+        int suma = 0;
+        int i = 0;
 
+        while(i < 100){
+            if(i % 2 == 0){
+                suma+= i;
+            }
+            i++;
+        }
+        System.out.println("La suma es: " + suma);
+        //No hago el producto porque da resultado demasiado grande
     }
 
     /**
@@ -177,8 +197,25 @@ public class DemoWhileUno
      *  y producto de impares entre 1 y 100 
      *  Con una variable booleana que actúe de switch o conmutador
      */
-    public  void ejemplo09()
-    {
+    public  void ejemplo09(){
+        int suma = 0;
+        int i = 0;
+        boolean esPar = false;
+        //No hago el producto porque da resultado demasiado grande
+
+        while(i < 100){
+            if(i % 2 == 0){
+                esPar = true;
+            }else{
+                esPar = false;
+            }
+
+            if(esPar){
+                suma += i;
+            }
+            i++;
+        }
+        System.out.println("La suma es: " + suma);
 
     }
 
@@ -186,8 +223,7 @@ public class DemoWhileUno
      * Generar n aleatorios entre 5 y 15 inclusive y contar los pares, los que acaban en 2
      * y sumar los impares
      */
-    public  void ejemplo10(int n)
-    {
+    public  void ejemplo10(int n){
 
     }
 
@@ -390,7 +426,7 @@ public class DemoWhileUno
         //TODO añadir aqui el codigo de pruebas: crear instancia y llamar a las funciones
         DemoWhileUno miDemo = new DemoWhileUno();
 
-        miDemo.ejemplo06();
+        miDemo.ejemplo09();
     }
 
 }
