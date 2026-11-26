@@ -118,12 +118,12 @@ public class DemoWhileUno
         while(!es25){
             contador++;
             int numeroAleatorio = (int) (Math.random() * (50 - 10 + 1)) + 10;
-            System.out.print( " " + numeroAleatorio);
+            System.out.printf( " %4d", numeroAleatorio);
             if(contador % 6 == 0){
                 System.out.print("\n");
             }
             if(numeroAleatorio == 25){
-                System.out.println(" Fin del bucle, el numero ya es " + numeroAleatorio);
+                System.out.printf( " %4d", numeroAleatorio);
                 es25 = true;
             }
         }
@@ -426,7 +426,7 @@ public class DemoWhileUno
         //TODO añadir aqui el codigo de pruebas: crear instancia y llamar a las funciones
         DemoWhileUno miDemo = new DemoWhileUno();
 
-        miDemo.ejemplo09();
+        miDemo.ejemplo05();
     }
 
 }
