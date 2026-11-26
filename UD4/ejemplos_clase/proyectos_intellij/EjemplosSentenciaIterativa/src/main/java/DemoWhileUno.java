@@ -305,17 +305,27 @@ public class DemoWhileUno
     /**
      *  Calcular el inverso de un nº (sin contar previamente sus cifras)
      */
-    public int inversoV1(int numero)
-    {
+    public int inversoV1(){
+        Scanner teclado = new Scanner(System.in);
+        System.out.println("Introduce un numero para invertirlo: ");
+        int numero1 = teclado.nextInt();
+        int numeroInvertido = 0;
 
-         return 0;
+        while(numero1 > 0){
+            int ultimaCifra = numero1 % 10;
+            numeroInvertido = numeroInvertido * 10 + ultimaCifra;
+            numero1 /= 10;
+        }
+
+        System.out.printf("El numero invertido es %d", numeroInvertido);
+         return numeroInvertido;
     }
 
     /**
      *  Calcular el inverso de un nº (contando previamente sus cifras)
      */
-    public int inversoV2(int numero)
-    {
+    public int inversoV2(int numero){
+
 
          return 0;
     }
@@ -326,8 +336,7 @@ public class DemoWhileUno
      * para las llamadas  misterio(1);       misterio(6);    
      *              misterio(19);  misterio(39);     misterio(74);
      */
-    public   void misterio1(int x)
-    {
+    public void misterio1(int x){
         int y = 1;
         int z = 0;
         while (2 * y <= x)   {
@@ -371,8 +380,28 @@ public class DemoWhileUno
      * Generar 20 nºs aleatorios entre 5 y 10 incluidos
      * y para cada número calcular y escribir su sumatorio
      */
-    public  void bucleAnidado01()
-    {
+    public  void bucleAnidado01(){
+        int numeroAleatorio = 1;
+        int contador = 0;
+
+        for(contador = 0; contador < 20; contador++){
+            numeroAleatorio = (int) (Math.random() * 6) + 5;
+            int sumatorio = 0;
+
+            System.out.printf("Numero %d, su sumatorio es: \n", numeroAleatorio);
+
+            while(numeroAleatorio > 0){
+                sumatorio += numeroAleatorio;
+                System.out.printf("%d", numeroAleatorio);
+                if (numeroAleatorio > 1) {
+                    System.out.print(" + ");
+                }
+                numeroAleatorio--;
+            }
+
+            System.out.printf(" = %d%n", sumatorio);
+        }
+
 
     }
 
@@ -391,8 +420,13 @@ public class DemoWhileUno
         5: * * * * *
         9: * * * * * * * * *
      */
-    public  void bucleAnidado02()
-    {
+    public void bucleAnidado02(){
+        int numeroAleatorio = (int) (Math.random() * 46) + 5;
+        int contador = 0;
+
+        while(contador < 10){
+
+        }
 
     }
 
@@ -471,7 +505,7 @@ public class DemoWhileUno
         //TODO añadir aqui el codigo de pruebas: crear instancia y llamar a las funciones
         DemoWhileUno miDemo = new DemoWhileUno();
 
-        miDemo.ejemplo05();
+        miDemo.bucleAnidado01();
     }
 
 }
