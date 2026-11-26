@@ -112,19 +112,18 @@ public class DemoWhileUno
      *  Bucle controlado por un valor centinela
      */
     public void ejemplo05(){
-        boolean es25 = false;
+        int numero = -1;
         int contador = 0;
 
-        while(!es25){
+        while(numero != 25){
             contador++;
-            int numeroAleatorio = (int) (Math.random() * (50 - 10 + 1)) + 10;
-            System.out.printf( " %4d", numeroAleatorio);
+            numero = (int) (Math.random() * (50 - 10 + 1)) + 10;
+            System.out.printf( " %4d", numero);
             if(contador % 6 == 0){
                 System.out.print("\n");
             }
-            if(numeroAleatorio == 25){
-                System.out.printf( " %4d", numeroAleatorio);
-                es25 = true;
+            if(numero == 25){
+                System.out.printf( " %4d", numero);
             }
         }
     }
@@ -472,7 +471,7 @@ public class DemoWhileUno
         //TODO añadir aqui el codigo de pruebas: crear instancia y llamar a las funciones
         DemoWhileUno miDemo = new DemoWhileUno();
 
-        miDemo.contarCifras();
+        miDemo.ejemplo05();
     }
 
 }
