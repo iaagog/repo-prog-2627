@@ -223,17 +223,41 @@ public class DemoWhileUno
      * Generar n aleatorios entre 5 y 15 inclusive y contar los pares, los que acaban en 2
      * y sumar los impares
      */
-    public  void ejemplo10(int n){
+    public void ejemplo10(int n){
+        int pares = 0, acabanEn2 = 0, impares = 0;
 
+        for(int i = 0; i < n; i++){
+            int numeroAleatorio = (int) (Math.random() * 11) + 5;
+            if(numeroAleatorio % 2 == 0){
+                pares++;
+            }else{
+                impares++;
+            }
+
+            if(numeroAleatorio % 10 == 2){
+                acabanEn2++;
+            }
+        }
+
+        System.out.println("Pares: " + pares);
+        System.out.printf("Impares: %d\n", impares);
+        System.out.printf("Acaban en 2: %d\n", acabanEn2);
     }
 
     /**
      * Tirar un dado repetidas veces hasta que salga un 6.
      * Contar las tiradas y sumarlas (se excluye el 6 de los cálculos)
      */
-    public  void ejemplo11(int n)
-    {
+    public  void ejemplo11(int n){
+        Dado dado = new Dado();
+        int tiradas = 0;
+        while(dado.getCara() != 6){
+            dado.tirarDado();
+            tiradas++;
+        }
 
+        System.out.println("La cara del dado es " + dado.getCara());
+        System.out.printf("Se han realizado %d tiradas", tiradas);
     }
 
     /**
@@ -243,18 +267,40 @@ public class DemoWhileUno
      *  minúscula. Si no es así pide de nuevo  al usuario otra letra hasta que 
      *  introduzca una letra correcta (hazlo con un while)
      */
-    public void ejemplo12()
-    {
+    public void ejemplo12(){
+        Scanner teclado = new Scanner(System.in);
+        boolean esVocal = false;
 
+
+        while(!esVocal){
+            System.out.printf("Introduce una letra: ");
+            char letra = teclado.next().charAt(0);
+
+            switch(letra){
+                case 'a': case 'e': case 'i': case 'o': case 'u':
+                    esVocal = true;
+                    break;
+            }
+        }
     }
 
     /**
      *  Calcular y devolver el nº de cifras de numero
      */
-    public int contarCifras(int numero)
-    {
+    public int contarCifras(){
+        Scanner teclado = new Scanner(System.in);
+        System.out.println("Introduce un numero");
+        int num = teclado.nextInt();
+        int numCifras = 1;
 
-        return 0;
+         while(num >= 10){
+             System.out.println(num / 10);
+             num /= 10;
+             numCifras++;
+         }
+
+        System.out.printf("El numero de cifras del numero es %d", numCifras);
+        return numCifras;
     }
 
     /**
@@ -426,7 +472,7 @@ public class DemoWhileUno
         //TODO añadir aqui el codigo de pruebas: crear instancia y llamar a las funciones
         DemoWhileUno miDemo = new DemoWhileUno();
 
-        miDemo.ejemplo05();
+        miDemo.contarCifras();
     }
 
 }
