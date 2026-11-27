@@ -17,17 +17,24 @@ public class DemoFor
     /**
      * Saludar 10 veces con for
      */
-    public  void ejemploFor01()
-    {
-
+    public  void ejemploFor01(){
+        for (int i = 0; i < 10; i++) {
+            System.out.println("Hola " + i + 1);
+        }
     }
     
     
     /**
      * Tirar una moneda 10 veces con for
      */
-    public  void ejemploFor02()
-    {
+    public  void ejemploFor02(){
+        for (int i = 0; i < 10; i++){
+            moneda.tirar();
+            if(moneda.esCara())
+                System.out.printf("Es cara%n");
+            else
+                System.out.printf("Es cruz%n");
+        }
         
     }
 
@@ -35,9 +42,20 @@ public class DemoFor
      * Tirar una moneda 30 veces
      * contando las veces que ha salido cara y las que ha salido cruz
      */
-    public  void ejemploFor03()
-    {
-        
+    public void ejemploFor03(){
+        int caras = 0, cruces = 0;
+        for (int i = 0; i < 30; i++) {
+            moneda.tirar();
+            if(moneda.esCara())
+                caras++;
+
+            else{
+                cruces++;
+            }
+        }
+
+        System.out.printf("Han salido %d caras", caras);
+        System.out.printf(" y %d cruces", cruces);
     }
     
      /**
@@ -45,8 +63,12 @@ public class DemoFor
      *  1, 3, 5, 7, 9, 11, 13, 15, 17, 19
      *  
      */
-    public void imparesEntre1y20()
-    {
+    public void imparesEntre1y20(){
+        for (int i = 0; i < 20; i++){
+            if(i % 2 != 0){
+                System.out.printf("%d, ", i);
+            }
+        }
          
 
     }
@@ -56,9 +78,26 @@ public class DemoFor
      *
      *  
      */
-    public void maximo(int n)
-    {
-         
+    public void maximo(int n){
+        int numero = (int) (Math.random() * 61) - 10;
+        int maximo = 0;
+        int vecesMaximo = 0;
+
+        for (int i = 0; i < n; i++){
+            numero = (int) (Math.random() * 61) - 10;
+            if(i == 0){
+                numero = maximo;
+            }else{
+                if(numero > maximo){
+                    maximo = numero;
+                    System.out.println("El maximo es: " + maximo);
+                    vecesMaximo++;
+                }
+            }
+            System.out.println(numero);
+        }
+
+        System.out.printf("El maximo salio %d veces", vecesMaximo);
     }
     
      /**
@@ -253,5 +292,7 @@ public class DemoFor
 
     static void main(String[] args) {
         //TODO añadir aqui el codigo de pruebas: crear instancia y llamar a las funciones
+        DemoFor prueba = new DemoFor();
+        prueba.maximo(20);
     }
 }
